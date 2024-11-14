@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <!--import font from google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <!--import style-->
+    <link rel="stylesheet" href="dist/css/style.css"/>
+    <!--import script-->
+    <script src="js/main.js" type="module"></script>
+    <title>TODO List</title>
+</head>
+<body>
+    <main>
+        <section class="newItemEntry">
+            <form id="itemEntryForm">
+                <lable for="newItem">Enter a new todo item</lable>
+
+                <input id="newItem" type="text" size="40" autocomplete="off" placeholder="Add item" tabindex="0">
+                
+                <button id="newItem" class="button" title="Add new item" aria-label="Add new item to list" tabindex="0">+</button> 
+            </form>
+        </section>
+        <section class="listContainer">
+            <div>
+                <h1>Todo list</h1>
+                <button id="clearItems" class="button" title="Clear list" aria-label="Remove all items from the list" tabindex="0">Clear</button>
+            </div>
+            <hr />
+            <div id="itemList">
+                <div class="item">
+                    <input id="1" type="checkbox" tabindex="0">
+                    <label for="1">Eat</label>
+                </div>
+                <div class="item">
+                    <input id="2" type="checkbox" tabindex="0">
+                    <label for="2">Sleep</label>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
