@@ -1,12 +1,11 @@
-import ToDoItem from "./todoItem";
+import ToDoItem from "./todoitem";
 import ToDoList from "./todolist";
-import Test from "./test";
 
 const toDoList = new ToDoList();
 
 // launch app
 document.addEventListener("readystatechange", (event) => {
-    if(event.target.readyState = "complete"){
+    if(event.target.readyState == "complete"){
         initApp();
     }
 });
@@ -17,6 +16,17 @@ const initApp = () => {
     itemEntryForm.addEventListener("submit", (event) => {
         event.preventDefault();
         processSubmission();
+    })
+
+    const clearItems = document.getElementById("clearItems");
+    clearItems.addEventListener("click", (event) => {
+        const list = toDoList.getList();
+        if(list.length){
+            const confirm = confirm("Clear all the list?");
+            if(confirm){
+                toDoList.clearList();
+            }
+        }
     })
     //procedural
     //load list objects
