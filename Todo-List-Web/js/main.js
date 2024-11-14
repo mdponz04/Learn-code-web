@@ -1,11 +1,14 @@
-import ToDoItem from "./todoitem";
-import ToDoList from "./todolist";
+import Test from "./test.js";
+import ToDoList from "./todolist.js";
+import ToDoItem from "./todoitem.js";
 
+const test = new Test();
 const toDoList = new ToDoList();
 
 // launch app
 document.addEventListener("readystatechange", (event) => {
     if(event.target.readyState == "complete"){
+        //test.testConsoleWriting();
         initApp();
     }
 });
@@ -22,9 +25,10 @@ const initApp = () => {
     clearItems.addEventListener("click", (event) => {
         const list = toDoList.getList();
         if(list.length){
-            const confirm = confirm("Clear all the list?");
-            if(confirm){
+            const confirmed = confirm("Clear all the list?");
+            if(confirmed){
                 toDoList.clearList();
+                refreshThePage();
             }
         }
     })
@@ -73,7 +77,7 @@ const buildListItem = (item) => {
     label.textContent = item.getItem();
     div.appendChild(check);
     div.appendChild(label);
-    const container = document.getElementById("listItems");
+    const container = document.getElementById("itemList");
     container.appendChild(div);
 }
 

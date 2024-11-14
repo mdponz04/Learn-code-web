@@ -1,3 +1,5 @@
-export default () => {
-    console.log("text file loader");
+export default class Test{
+    testConsoleWriting = () => {
+        console.log("Testing success!!!");
+    }
 }
